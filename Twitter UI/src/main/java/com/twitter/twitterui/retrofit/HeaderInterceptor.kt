@@ -10,7 +10,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 class HeaderInterceptor @Inject constructor(
-    @ApplicationContext val context: Context,
+    @param:ApplicationContext val context: Context,
 ) : Interceptor {
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {

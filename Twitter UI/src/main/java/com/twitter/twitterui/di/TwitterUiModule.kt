@@ -10,6 +10,8 @@ import com.twitter.twitterui.data.repository.ITwitterRepository
 import com.twitter.twitterui.data.repository.TwitterRepository
 import com.twitter.twitterui.domain.usecase.ITwitterUseCase
 import com.twitter.twitterui.domain.usecase.TwitterUseCase
+import com.twitter.twitterui.domain.usecase.analyze.AnalyzeTweetUseCase
+import com.twitter.twitterui.domain.usecase.analyze.IAnalyzeTweetUseCase
 import com.twitter.twitterui.retrofit.ApiInterface
 import com.twitter.twitterui.utils.connection_utils.ConnectionUtils
 import com.twitter.twitterui.utils.connection_utils.IConnectionUtils
@@ -79,6 +81,13 @@ abstract class UseCaseModule {
     abstract fun bindTwitterUseCase(
         twitterUseCase: TwitterUseCase
     ): ITwitterUseCase
+
+    @Binds
+    @Singleton
+    abstract fun bindAnalyzeTweetUseCase(
+        analyzeTweetUseCase: AnalyzeTweetUseCase
+    ): IAnalyzeTweetUseCase
+
 }
 
 @Retention(AnnotationRetention.BINARY)

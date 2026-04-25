@@ -18,7 +18,7 @@ import javax.inject.Inject
 class TwitterRepository @Inject constructor(
     private val connectionUtils: IConnectionUtils,
     private val mIRemoteDataSource: IRemoteDataSource,
-    @IoDispatcher private val dispatcher: CoroutineDispatcher,
+    @param:IoDispatcher private val dispatcher: CoroutineDispatcher,
 ) : ITwitterRepository {
     override fun postTweet(
         createTweetRequest: CreateTweetRequest,

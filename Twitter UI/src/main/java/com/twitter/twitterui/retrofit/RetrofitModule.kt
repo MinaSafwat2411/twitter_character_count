@@ -53,7 +53,7 @@ class RetrofitModule {
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(Constants.URL.BASE_URL)
-            .callFactory(okHttpClient)
+            .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

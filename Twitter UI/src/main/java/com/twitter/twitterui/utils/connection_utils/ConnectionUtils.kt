@@ -7,10 +7,6 @@ import android.net.NetworkCapabilities
 import androidx.annotation.RequiresPermission
 
 class ConnectionUtils(var context: Context) : IConnectionUtils {
-    /**
-     * Get Network connectivity state
-     * @return : true if connected
-     */
     override val isConnected: Boolean
         @RequiresPermission(Manifest.permission.ACCESS_NETWORK_STATE)
         get() {
