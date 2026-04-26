@@ -1,10 +1,16 @@
+import org.gradle.api.publish.maven.MavenPublication
+
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
     id("org.jetbrains.kotlin.plugin.serialization") version "2.3.21"
+    id("maven-publish")
 }
+
+group = "com.github.mina-safwat"
+version = "1.0.0"
 
 android {
     namespace = "com.twitter.twitterui"
@@ -16,6 +22,14 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
+
+    publishing {
+        singleVariant("devRelease") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -73,4 +87,18 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:5.3.2")
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
 
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.mina-safwat"
+            artifactId = "twitterui"
+            version = "1.0.0"
+
+            afterEvaluate {
+                from(components["devRelease"])
+            }
+        }
+    }
 }
