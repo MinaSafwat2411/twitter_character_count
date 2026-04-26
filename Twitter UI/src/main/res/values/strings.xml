@@ -1,0 +1,13 @@
+<resources>
+    <string name="twitter_character_count_title">Twitter character count</string>
+    <string name="placeholder_text">Start typing! You can enter up to characters</string>
+    <string name="tweet_posted_success">Tweet posted successfully!</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="characters_typed">Characters Typed</string>
+    <string name="characters_remaining">Characters Remaining</string>
+    <string name="copy_text">Copy Text</string>
+    <string name="clear_text">Clear Text</string>
+    <string name="post_tweet">Post tweet</string>
+    <string name="failed_to_post_tweet">Failed to post tweet: %1$s</string>
+    <string name="clipboard_label_tweet">Tweet</string>
+</resources>

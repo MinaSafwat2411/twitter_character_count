@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TwitterCharacterCountTheme {
-                TwitterComposerScreen()
+                TwitterComposerScreen(onBack = { finish() })
             }
         }
     }

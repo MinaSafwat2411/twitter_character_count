@@ -1,0 +1,13 @@
+<resources>
+    <string name="twitter_character_count_title">عداد حروف تويتر</string>
+    <string name="placeholder_text">ابدأ الكتابة! يمكنك إدخال ما يصل إلى الحروف</string>
+    <string name="tweet_posted_success">تم نشر التغريدة بنجاح!</string>
+    <string name="copied_to_clipboard">تم النسخ إلى الحافظة</string>
+    <string name="characters_typed">الحروف المكتوبة</string>
+    <string name="characters_remaining">الحروف المتبقية</string>
+    <string name="copy_text">نسخ النص</string>
+    <string name="clear_text">مسح النص</string>
+    <string name="post_tweet">نشر التغريدة</string>
+    <string name="failed_to_post_tweet">فشل في نشر التغريدة: %1$s</string>
+    <string name="clipboard_label_tweet">تغريدة</string>
+</resources>

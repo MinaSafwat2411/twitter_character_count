@@ -24,4 +24,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "Twitter character count"
 include(":app")
-include(":Twitter UI")
+include(":TwitterUI")
+project(":TwitterUI").projectDir = file("Twitter UI")
