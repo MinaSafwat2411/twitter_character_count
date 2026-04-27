@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.github.MinaSafwat2411"
-version = "1.0.4"
+version = "1.0.5"
 
 android {
     namespace = "com.twitter.twitterui"
@@ -98,7 +98,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.MinaSafwat2411"
             artifactId = "twitter_character_count"
-            version = "1.0.4"
+            version = "1.0.5"
 
             afterEvaluate {
                 from(components["devRelease"])
