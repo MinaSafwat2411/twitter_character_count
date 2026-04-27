@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.twitter.charactercount.ui.theme.TwitterCharacterCountTheme
+import com.twitter.twitterui.presentation.compose.TwitterComposerScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
