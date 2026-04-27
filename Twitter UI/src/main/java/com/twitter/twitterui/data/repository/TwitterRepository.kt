@@ -5,6 +5,7 @@ import com.twitter.twitterui.data.model.CreateTweetResponse
 import com.twitter.twitterui.data.model.Status
 import com.twitter.twitterui.data.remote.IRemoteDataSource
 import com.twitter.twitterui.di.IoDispatcher
+import com.twitter.twitterui.utils.Constants.Errors
 import com.twitter.twitterui.utils.connection_utils.IConnectionUtils
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
@@ -37,7 +38,7 @@ class TwitterRepository @Inject constructor(
     ): Flow<Status<T>> {
         return flow {
             if (!connectionUtils.isConnected) {
-                emit(Status.NoNetwork<T>(error = "No Network"))
+                emit(Status.NoNetwork<T>(error = Errors.NO_NETWORK))
                 return@flow
             }
 
@@ -49,23 +50,32 @@ class TwitterRepository @Inject constructor(
                     if (body != null) {
                         emit(Status.Success<T>(body))
                     } else {
-                        emit(Status.NoData<T>(error = "No Data"))
+                        emit(Status.NoData<T>(error = Errors.NO_DATA))
                     }
                 } else {
-                    val errorMsg = response.errorBody()?.string() ?: "Unknown Error"
                     when (response.code()) {
-                        401 -> emit(Status.NotAuthorized<T>(error = errorMsg))
-                        403 -> emit(Status.Forbidden<T>(error = errorMsg))
-                        500 -> emit(Status.ServerError<T>(error = errorMsg))
-                        else -> emit(Status.Error<T>(error = errorMsg, errorCode = response.code()))
+                        401 -> emit(Status.NotAuthorized<T>(error = Errors.UNAUTHORIZED))
+                        403 -> emit(Status.Forbidden<T>(error = Errors.FORBIDDEN))
+                        500 -> emit(Status.ServerError<T>(error = Errors.SERVER_ERROR))
+                        else -> emit(
+                            Status.Error<T>(
+                                error = Errors.UNKNOWN_ERROR,
+                                errorCode = response.code()
+                            )
+                        )
                     }
                 }
 
             } catch (throwable: Throwable) {
                 when (throwable) {
-                    is SocketException -> emit(Status.NoNetwork<T>(error = "Network error"))
-                    is HttpException -> emit(Status.Error<T>(error = throwable.message(), errorCode = throwable.code()))
-                    else -> emit(Status.Error<T>(error = throwable.localizedMessage ?: "Unknown Error"))
+                    is SocketException -> emit(Status.NoNetwork<T>(error = Errors.NO_NETWORK))
+                    is HttpException -> emit(
+                        Status.Error<T>(
+                            error = throwable.message() ?: Errors.UNKNOWN_ERROR,
+                            errorCode = throwable.code()
+                        )
+                    )
+                    else -> emit(Status.Error<T>(error = throwable.localizedMessage ?: Errors.UNKNOWN_ERROR))
                 }
             }
         }.flowOn(dispatcher)

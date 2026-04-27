@@ -228,7 +228,13 @@ private fun TwitterComposerContent(
             Spacer(modifier = Modifier.height(24.dp))
 
             TwitterPostButton(
-                onClick = { viewModel.onEvent(TwitterContract.Event.OnPostClicked) },
+                onClick = { 
+                    if(token==""){
+                        Toast.makeText(context, R.string.token_required, Toast.LENGTH_SHORT).show()
+                    }else{
+                        viewModel.onEvent(TwitterContract.Event.OnPostClicked)
+                    }
+                },
                 isEnabled = state.isValid && state.text.isNotEmpty(),
                 isLoading = state.isLoading,
                 twitterBlue = twitterBlue,

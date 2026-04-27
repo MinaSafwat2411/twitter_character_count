@@ -22,7 +22,7 @@ Add the library to your module's `build.gradle`:
 
 ```gradle
 dependencies {
-    implementation 'com.github.YOUR_GITHUB_USERNAME:twitter_character_count:1.0.0'
+    implementation 'com.github.MinaSafwat2411:twitter_character_count:1.0.0'
 }
 ```
 

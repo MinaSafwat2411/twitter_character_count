@@ -10,4 +10,5 @@
     <string name="post_tweet">نشر التغريدة</string>
     <string name="failed_to_post_tweet">فشل في نشر التغريدة: %1$s</string>
     <string name="clipboard_label_tweet">تغريدة</string>
+    <string name="token_required">التوكين مطلوب لنشر التغريدة</string>
 </resources>

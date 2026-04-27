@@ -19,4 +19,13 @@ object Constants {
         const val ACCEPT_JSON_VALUE = "application/json"
     }
 
+    object Errors {
+        const val NO_NETWORK = "Please check your internet connection and try again."
+        const val UNAUTHORIZED = "Invalid or expired token. Please log in again."
+        const val FORBIDDEN = "You don't have permission to perform this action."
+        const val SERVER_ERROR = "Something went wrong on our end. Please try again later."
+        const val NO_DATA = "No data received from the server."
+        const val UNKNOWN_ERROR = "An unexpected error occurred. Please try again."
+    }
+
 }

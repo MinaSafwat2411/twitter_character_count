@@ -89,7 +89,7 @@ class TwitterViewModel @Inject constructor(
                     _effect.send(TwitterContract.Effect.ShowPostSuccess)
                     _effect.send(TwitterContract.Effect.CloseScreen)
                 } else {
-                    _effect.send(TwitterContract.Effect.ShowPostError("Failed to post tweet: ${response.errorCode}"))
+                    _effect.send(TwitterContract.Effect.ShowPostError(response.error ?: "Unknown error"))
                 }
             }
         }

@@ -9,7 +9,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.mina-safwat"
+group = "com.github.MinaSafwat2411"
 version = "1.0.0"
 
 android {
@@ -92,7 +92,7 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.mina-safwat"
+            groupId = "com.github.MinaSafwat2411"
             artifactId = "twitterui"
             version = "1.0.0"
 

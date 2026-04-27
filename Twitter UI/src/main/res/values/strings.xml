@@ -10,4 +10,5 @@
     <string name="post_tweet">Post tweet</string>
     <string name="failed_to_post_tweet">Failed to post tweet: %1$s</string>
     <string name="clipboard_label_tweet">Tweet</string>
+    <string name="token_required">Token is required to post a tweet</string>
 </resources>
