@@ -11,7 +11,7 @@ plugins {
 }
 
 group = "com.github.MinaSafwat2411"
-version = "1.0.1"
+version = "1.0.3"
 
 android {
     namespace = "com.twitter.twitterui"
