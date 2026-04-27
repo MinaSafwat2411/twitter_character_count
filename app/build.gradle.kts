@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+    alias(libs.plugins.kotlinandroid)
 }
 
 android {
@@ -36,6 +37,9 @@ android {
         compose = true
         buildConfig = true
     }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
 }
 
 dependencies {
@@ -59,5 +63,5 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     // implementation(project(":TwitterUI"))
-    implementation("com.github.MinaSafwat2411:twitter_character_count:1.0.1")
+    implementation("com.github.MinaSafwat2411:twitter_character_count:1.0.3")
 }

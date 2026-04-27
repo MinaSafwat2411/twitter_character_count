@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.ksp)
     id("org.jetbrains.kotlin.plugin.serialization")
     id("maven-publish")
+    alias(libs.plugins.kotlinandroid)
 }
 
 group = "com.github.MinaSafwat2411"
@@ -46,6 +47,9 @@ android {
             dimension = "environment"
             buildConfigField("String", "BASE_NETWORK_URL", "\"https://api.x.com/\"")
         }
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 
 }
@@ -94,7 +98,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.MinaSafwat2411"
             artifactId = "twitter_character_count"
-            version = "1.0.1"
+            version = "1.0.3"
 
             afterEvaluate {
                 from(components["devRelease"])
