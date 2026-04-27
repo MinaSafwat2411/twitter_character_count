@@ -5,16 +5,16 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.3.21"
+    id("org.jetbrains.kotlin.plugin.serialization")
     id("maven-publish")
 }
 
 group = "com.github.MinaSafwat2411"
-version = "1.0.0"
+version = "1.0.1"
 
 android {
     namespace = "com.twitter.twitterui"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -94,7 +94,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.MinaSafwat2411"
             artifactId = "twitter_character_count"
-            version = "1.0.0"
+            version = "1.0.1"
 
             afterEvaluate {
                 from(components["devRelease"])

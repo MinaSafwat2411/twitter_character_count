@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.twitter.charactercount"
-    compileSdk = 36
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.twitter.charactercount"
@@ -59,5 +59,5 @@ dependencies {
     ksp(libs.hilt.compiler)
 
     // implementation(project(":TwitterUI"))
-    implementation("com.github.MinaSafwat2411:twitter_character_count:1.0.0")
+    implementation("com.github.MinaSafwat2411:twitter_character_count:1.0.1")
 }
