@@ -58,5 +58,6 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    implementation(project(":TwitterUI"))
+    // implementation(project(":TwitterUI"))
+    implementation("com.github.MinaSafwat2411:twitter_character_count:1.0.0")
 }

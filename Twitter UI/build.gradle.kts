@@ -93,7 +93,7 @@ publishing {
     publications {
         register<MavenPublication>("release") {
             groupId = "com.github.MinaSafwat2411"
-            artifactId = "twitterui"
+            artifactId = "twitter_character_count"
             version = "1.0.0"
 
             afterEvaluate {
